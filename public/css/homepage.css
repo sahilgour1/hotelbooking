@@ -1,0 +1,268 @@
+/* Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body {
+    line-height: 1.7em;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+  }
+  
+  /* Utility Classes */
+  .text-primary {
+    color: #FF8C00;
+  }
+  .logo{
+    color: #fff;
+    text-decoration: none;
+  }
+  .container {
+    margin: auto;
+    max-width: 1200px; /* Increased container width */
+    padding: 0 20px;
+  }
+  
+  /* Button Styles */
+  .btn {
+    display: inline-block;
+    padding: 13px 30px;
+    font-size: 1.2em;
+    font-weight: 500;
+    text-decoration: none;
+    background: #333;
+    color: #fff;
+    border-radius: 40px;
+    letter-spacing: 0.1em;
+    transition: all 0.3s ease;
+  }
+  
+  .btn:hover {
+    background: #FF8C00;
+    color: #333;
+  }
+  
+  /* Header */
+  header {
+    width: 100%;
+    position: relative;
+  }
+  
+  #navbar {
+    background: #333;
+    padding: 10px 0;
+  }
+  
+  #navbar h1 {
+    font-size: 36px;
+    color: #fff;
+  }
+  
+  #navbar ul {
+    list-style: none;
+    text-align: right;
+  }
+  
+  #navbar ul li {
+    display: inline-block;
+    padding: 10px 20px;
+  }
+  
+  #navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  #navbar ul li a:hover {
+    color: #FF8C00;
+  }
+  
+  #hero {
+    background: url("https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260") no-repeat center center/cover;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    padding: 0 20px;
+  }
+  
+  #hero .hero-content {
+    max-width: 600px;
+  }
+  
+  #hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+  
+  #hero p {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  #hotel-list {
+    padding: 50px 0;
+    background: #f9f9f9;
+    text-align: center;
+  }
+  
+  #hotel-list .section-title {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #333;
+  }
+  
+  .hotel-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .hotel-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+  
+  .hotel-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .hotel-card h3 {
+    font-size: 1.5em;
+    margin: 15px 0;
+  }
+  
+  .hotel-card .location,
+  .hotel-card .price {
+    font-size: 1em;
+    color: #777;
+  }
+  
+  .hotel-card .btn-view {
+    display: inline-block;
+    margin: 15px 0;
+    padding: 10px 25px;
+    background-color: #FF8C00;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 20px;
+  }
+  
+  .hotel-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .hotel-card .btn-view:hover {
+    background-color: #ff6a00;
+  }
+  /* Footer Styles */
+.footer {
+    background: #2C2C2C;
+    color: #fff;
+    padding: 50px 0;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  
+  .footer .footer-logo h1 a {
+    color: #FF8C00; /* BookMyBooking primary color */
+    font-size: 2.5em;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .footer .footer-logo h1 a:hover {
+    color: #FF6A00; /* Darker hover color for logo */
+  }
+  
+  .footer .footer-links ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+  }
+  
+  .footer .footer-links ul li a {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+  }
+  
+  .footer .footer-links ul li a:hover {
+    color: #FF8C00; /* Highlight links with primary color */
+  }
+  
+  .footer .footer-social {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .footer .footer-social a {
+    color: #bbb;
+    font-size: 1.5em;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer .footer-social a:hover {
+    color: #FF8C00; /* Match hover with primary color */
+  }
+  
+  .footer .footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    font-size: 0.9em;
+    color: #bbb;
+  }
+  
+  .footer .footer-bottom p {
+    margin-top: 20px;
+  }
+  
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .footer .footer-content {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .footer .footer-logo h1 a {
+      font-size: 2.2em;
+    }
+  
+    .footer .footer-links ul {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+  
+    .footer .footer-social {
+      justify-content: center;
+    }
+  }
+  
