@@ -1,0 +1,84 @@
+.hotel-card {
+    width: 100%;
+    max-width: 891px;
+    height: 225px;
+    margin: 0 auto;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+.align-items-center {
+    align-items: center !important;
+    height: 195px;
+}
+.hotel-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.hotel-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.hotel-image:hover {
+    transform: scale(1.05);
+}
+
+.hotel-name {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.hotel-location {
+    font-size: 1rem;
+    color: #777;
+}
+
+.check-availability {
+    color: #fff;
+    background-color: #007BFF;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.check-availability:hover {
+    background-color: #0056b3;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
+
+.hotel-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #555;
+    margin-right: 43px;
+}
+
+.hotel-info,
+.availability-section,
+.price-section {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.availability-section {
+    text-align: center;
+    text-align: center;
+    margin-top: 13px;
+    margin-left: 131px;
+}
+
+
+
+.price-section {
+    text-align: right;
+}

@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Login;
+use App\Http\Controllers\LocationController;
+
  
 Route::get('/user', [UserController::class, 'index']);
 /*
@@ -24,8 +26,20 @@ Route::post('/login', [Login::class, 'login']);
 
 // create hotel by admin 
 Route::post('/createhotel', [Login::class, 'createhotel'])->name('/createhotel');
+// login and register routes 
+
+Route::match(['get', 'post'], '/registeruser', [Login::class, 'register'])->name('registeruser');
+Route::post('/loginuser', [Login::class, 'login_user'])->name('/loginuser');
+Route::match(['get', 'post'], 'logout', [Login::class, 'logout'])->name('logout');
+
+Route::get('homepage', function () {
+    return view('ui.homepage');
+})->name("homepage");
 
 Route::get('/ui', function () {
     return view('ui.homepage');
 })->name("/ui");
+
+// mumbai hotels 
+Route::match(['get', 'post'], '/mumbai-hotels', [LocationController::class, 'mumbai_hotels'])->name('/mumbai-hotels');
 
