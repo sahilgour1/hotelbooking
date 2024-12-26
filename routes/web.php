@@ -36,9 +36,9 @@ Route::get('homepage', function () {
     return view('ui.homepage');
 })->name("homepage");
 
-Route::get('/ui', function () {
+Route::get('bookmystay', function () {
     return view('ui.homepage');
-})->name("/ui");
+})->name("bookmystay");
 
 // mumbai hotels 
 Route::match(['get', 'post'], '/mumbai-hotels', [LocationController::class, 'mumbai_hotels'])->name('/mumbai-hotels');

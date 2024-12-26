@@ -10,7 +10,7 @@ class LocationController extends Controller
     //
     function mumbai_hotels(){
         $mumbai_hotels = DB::table('hotels')->select('id','hote_name','hotel_price','hotel_image','hotel_location')->get();
-        // dd($mumbai_hotels);
+        $mumbai_hotels = json_decode(json_encode($mumbai_hotels), true);
         return view('mumbai.mumbaihotels')->with('mumbai_hotels', $mumbai_hotels);
        
     }

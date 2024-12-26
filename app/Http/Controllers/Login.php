@@ -45,8 +45,8 @@ class Login extends Controller
         if ($request->hasFile('hotel_image')) {
             $file = $request->file('hotel_image');
             $fileName = time() . '-' . $file->getClientOriginalName();
-            $filePath = $file->storeAs('public/hotelimage', $fileName);
-            $Hotel->hotel_image = $filePath;
+            $filePath = $file->move(public_path('hotelimage'), $fileName);
+            $Hotel->hotel_image = 'hotelimage/' . $fileName;
         }
 
         $Hotel->save();

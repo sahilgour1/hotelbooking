@@ -32,14 +32,14 @@
 }
 
 .hotel-name {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: #333;
     margin-bottom: 0.5rem;
 }
 
 .hotel-location {
     font-size: 1rem;
-    color: #777;
+    color: #000000;
 }
 
 .check-availability {

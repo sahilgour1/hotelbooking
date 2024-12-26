@@ -3,7 +3,7 @@
 
 <div class="container">
     <h1 class="text-center">Create Hotel </h1>
-        <a href="{{ route('/ui') }}">ui</a>
+        <a href="{{ route('bookmystay') }}">ui</a>
     <div class="animated-form" style="animation: fadeInUp 1s;">
         <form action="{{ route('/createhotel') }}" method="POST" enctype="multipart/form-data">
             @csrf <!-- CSRF Token for security -->
