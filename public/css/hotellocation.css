@@ -44,7 +44,7 @@
 
 .check-availability {
     color: #fff;
-    background-color: #007BFF;
+    background-color: #4286cf;
     text-decoration: none;
     padding: 0.5rem 1rem;
     border-radius: 5px;
@@ -52,8 +52,8 @@
 }
 
 .check-availability:hover {
-    background-color: #0056b3;
-    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+    color: #fff;
+    background-color: #2577cf;
 }
 
 .hotel-price {
@@ -81,4 +81,44 @@
 
 .price-section {
     text-align: right;
+}
+.not-found-container {
+    text-align: center;
+    padding: 50px 20px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.not-found-title {
+    font-size: 2.5rem;
+    color: #ff4d4d;
+    font-weight: bold;
+}
+
+.not-found-emoji {
+    font-size: 4rem;
+    margin: 20px 0;
+    animation: bounce 1.5s infinite;
+}
+
+.not-found-message {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
 }

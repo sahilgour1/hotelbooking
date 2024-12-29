@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Login;
 use App\Http\Controllers\LocationController;
+use App\Http\Controllers\MumbaiController;
+
 
  
 Route::get('/user', [UserController::class, 'index']);
@@ -42,4 +44,8 @@ Route::get('bookmystay', function () {
 
 // mumbai hotels 
 Route::match(['get', 'post'], '/mumbai-hotels', [LocationController::class, 'mumbai_hotels'])->name('/mumbai-hotels');
+
+Route::match(['get', 'post'], '/searchmumbaihotels', [MumbaiController::class, 'searchmumbaihotels'])->name('/searchmumbaihotels');
+Route::match(['get', 'post'], '/searchbyprice', [MumbaiController::class, 'SearchByPrice'])->name('/searchbyprice');
+Route::match(['get', 'post'], '/pricefilter', [MumbaiController::class, 'SortByLowAndHigh'])->name('/pricefilter');
 

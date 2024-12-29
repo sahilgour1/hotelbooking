@@ -1,9 +1,5 @@
 @extends('layouts.layout')
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
-      rel="stylesheet" 
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
-      crossorigin="anonymous">
-      
+
 @section('content')
 <!-- Search Bar -->
 <nav id="search-navbar" class="navbar navbar-expand-lg border-top">
@@ -19,13 +15,12 @@
     </div>
 
     <div class="input-group w-20">
-        <form action="/pricefilter" method="POST">
-            @csrf
+        <form action="/pricefilter" method="GET">
             <div class="sortby-container" style="width: 250px; display: flex; margin-left: 27%;">
                 <select class="form-select" aria-label="Default select example">
-                    <option selected name="sortby">Sort By</option>
-                    <option  name="lowtohigh"value="0">Low to High</option>
-                    <option name="hightolow" value="1">High To Low</option>
+                    <option selected>Sort By</option>
+                    <option value="0">Low to High</option>
+                    <option value="1">High to Low</option>
                 </select>
                 <button class="btn btn-custom" type="submit">Search</button>
             </div>
@@ -38,19 +33,19 @@
 <div class="left-sidebar">
     <h4>Search Hotels</h4>
     <form method="POST" action="/searchbyprice">
-        @csrf 
+        @csrf
         <!-- Min Price Input -->
         <div class="mb-3">
             <label for="minPriceInput" class="form-label">Min Price</label>
             <input type="number" id="minPriceInput" name="min_price" class="form-control" 
-                   placeholder="Enter min price" min="0" />
+                   placeholder="Enter min price" min="0">
         </div>
 
         <!-- Max Price Input -->
         <div class="mb-3">
             <label for="maxPriceInput" class="form-label">Max Price</label>
             <input type="number" id="maxPriceInput" name="max_price" class="form-control" 
-                   placeholder="Enter max price" max="10000" />
+                   placeholder="Enter max price" max="10000">
         </div>
 
         <!-- Search Button -->
@@ -59,10 +54,9 @@
         </div>
     </form>
 </div>
-
 <link rel="stylesheet" href="css/hotellocation.css">
 
-@foreach ($mumbai_hotels as $hotel)
+@foreach ($searchHotels as $hotel)
 <div class="container my-4 hotel-card">
     <div class="row align-items-center">
         <!-- Left Side: Image -->
@@ -74,13 +68,13 @@
         <div class="col-md-9 d-flex align-items-center justify-content-between">
             <div class="hotel-info">
                 <h6 class="hotel-name">{{ $hotel['hote_name'] }}</h6>
-                <p class="hotel-location"><span style="color:grey;">Location: </span>{{ $hotel['hotel_location'] }}</p>
+                <p class="hotel-location">
+                    <span style="color:grey;">Location: </span>{{ $hotel['hotel_location'] }}
+                </p>
             </div>
             <div class="price-section">
                 <h3 style="background: yellow; width: 116px; padding: 7px; font-size: 19px; 
-                           margin-left: 151px; margin-top: -22px;">
-                    1 Day Price
-                </h3>
+                           margin-left: 151px; margin-top: -22px;">1 Day Price</h3>
                 <h5 class="hotel-price">
                     <span style="color:grey;">Price ₹</span>{{ $hotel['hotel_price'] }}
                 </h5>
@@ -91,6 +85,6 @@
         </div>
     </div>
 </div>
+<br>
 @endforeach
-
 @endsection

@@ -39,39 +39,10 @@
     </nav><br>
 
     <!-- Search Navbar -->
-    <nav id="search-navbar" class="navbar navbar-expand-lg border-top">
-        <div class="container-fluid">
-            <form class="d-flex w-100 justify-content-center" role="search" method="GET" action="/search">
-                <div class="input-group w-50">
-                    <input type="search" class="form-control custom-input" placeholder="Search for hotels..." aria-label="Search" name="query">
-                    <button class="btn btn-custom" type="submit">Search</button>
-                </div>
-            </form>
-        </div>
-    </nav><br>
+   
 
     <!-- Left Sidebar with Search & Price Filter -->
-    <div class="left-sidebar">
-    <h4>Search Hotels</h4>
-    <form method="GET" action="/search">
-        <!-- Min Price Input -->
-        <div class="mb-3">
-            <label for="minPriceInput" class="form-label">Min Price</label>
-            <input type="number" id="minPriceInput" name="min_price" class="form-control" placeholder="Enter min price" min="0" />
-        </div>
-        
-        <!-- Max Price Input -->
-        <div class="mb-3">
-            <label for="maxPriceInput" class="form-label">Max Price</label>
-            <input type="number" id="maxPriceInput" name="max_price" class="form-control" placeholder="Enter max price" max="10000" />
-        </div>
-        
-        <!-- Search Button -->
-        <div class="input-group">
-            <button type="submit" class="btn btn-primary w-100">Search</button>
-        </div>
-    </form>
-</div>
+  
 
 
 

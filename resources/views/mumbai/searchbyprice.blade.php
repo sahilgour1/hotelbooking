@@ -1,9 +1,5 @@
 @extends('layouts.layout')
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
-      rel="stylesheet" 
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
-      crossorigin="anonymous">
-      
+
 @section('content')
 <!-- Search Bar -->
 <nav id="search-navbar" class="navbar navbar-expand-lg border-top">
@@ -19,13 +15,12 @@
     </div>
 
     <div class="input-group w-20">
-        <form action="/pricefilter" method="POST">
-            @csrf
+        <form action="/pricefilter" method="GET">
             <div class="sortby-container" style="width: 250px; display: flex; margin-left: 27%;">
                 <select class="form-select" aria-label="Default select example">
-                    <option selected name="sortby">Sort By</option>
-                    <option  name="lowtohigh"value="0">Low to High</option>
-                    <option name="hightolow" value="1">High To Low</option>
+                    <option selected>Sort By</option>
+                    <option value="0">Low to High</option>
+                    <option value="1">High to Low</option>
                 </select>
                 <button class="btn btn-custom" type="submit">Search</button>
             </div>
@@ -38,7 +33,7 @@
 <div class="left-sidebar">
     <h4>Search Hotels</h4>
     <form method="POST" action="/searchbyprice">
-        @csrf 
+        @csrf
         <!-- Min Price Input -->
         <div class="mb-3">
             <label for="minPriceInput" class="form-label">Min Price</label>
@@ -62,7 +57,7 @@
 
 <link rel="stylesheet" href="css/hotellocation.css">
 
-@foreach ($mumbai_hotels as $hotel)
+@foreach ($searchablePost as $hotel)
 <div class="container my-4 hotel-card">
     <div class="row align-items-center">
         <!-- Left Side: Image -->
