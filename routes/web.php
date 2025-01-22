@@ -48,4 +48,5 @@ Route::match(['get', 'post'], '/mumbai-hotels', [LocationController::class, 'mum
 Route::match(['get', 'post'], '/searchmumbaihotels', [MumbaiController::class, 'searchmumbaihotels'])->name('/searchmumbaihotels');
 Route::match(['get', 'post'], '/searchbyprice', [MumbaiController::class, 'SearchByPrice'])->name('/searchbyprice');
 Route::match(['get', 'post'], '/pricefilter', [MumbaiController::class, 'SortByLowAndHigh'])->name('/pricefilter');
+Route::match(['get', 'post'], '/checkAvailability', [MumbaiController::class, 'CheckAvailability'])->name('/checkAvailability');
 

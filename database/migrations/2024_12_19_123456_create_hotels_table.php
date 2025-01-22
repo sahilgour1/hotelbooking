@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('hotel_price');
             $table->string('hotel_image');
             $table->string('hotel_location');
+            $table->longtext('overview');
             $table->string('cus_id');
             $table->timestamps();
         });

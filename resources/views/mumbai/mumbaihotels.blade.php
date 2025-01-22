@@ -3,7 +3,8 @@
       rel="stylesheet" 
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
       crossorigin="anonymous">
-      
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 @section('content')
 <!-- Search Bar -->
 <nav id="search-navbar" class="navbar navbar-expand-lg border-top">
@@ -19,13 +20,13 @@
     </div>
 
     <div class="input-group w-20">
-        <form action="/pricefilter" method="POST">
+        <form action="/pricefilter" id="sortby" method="POST">
             @csrf
             <div class="sortby-container" style="width: 250px; display: flex; margin-left: 27%;">
-                <select class="form-select" aria-label="Default select example">
-                    <option selected name="sortby">Sort By</option>
-                    <option  name="lowtohigh"value="0">Low to High</option>
-                    <option name="hightolow" value="1">High To Low</option>
+                <select class="form-select" name="sortby">
+                    <option selected>Sort By</option>
+                    <option  name='lowtohigh' value="0">Low to High</option>
+                    <option  name='hightolow' value="1">High To Low</option>
                 </select>
                 <button class="btn btn-custom" type="submit">Search</button>
             </div>
@@ -63,6 +64,7 @@
 <link rel="stylesheet" href="css/hotellocation.css">
 
 @foreach ($mumbai_hotels as $hotel)
+<?php  $id = $hotel['id'];?>
 <div class="container my-4 hotel-card">
     <div class="row align-items-center">
         <!-- Left Side: Image -->
@@ -85,7 +87,8 @@
                     <span style="color:grey;">Price ₹</span>{{ $hotel['hotel_price'] }}
                 </h5>
                 <div class="availability-section">
-                    <a href="#" class="btn btn-primary check-availability">Check Availability</a>
+                    <a href="/checkAvailability?hotelid=<?php echo $id;?>" class="btn btn-primary check-availability">Check Availability</a>
+                    <!-- <a href="some_url?userId=123"> something here </a> -->
                 </div>
             </div>
         </div>
@@ -93,4 +96,14 @@
 </div>
 @endforeach
 
+<script>
+$(document).ready(function () {
+    console.log("ready!");
+
+    $.ajax({
+
+    })
+   
+});
+</script>
 @endsection

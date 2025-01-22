@@ -56,11 +56,33 @@ class MumbaiController extends Controller
 
     }
      
+    // remaning 
     public function SortByLowAndHigh(Request $request){
         $sortby = new Hotel();
-        $sortby->low_to_high = $request->input('sortby');
-        print_r($sortby);die;
-        dd($request->all());
-     }
+        $lowtohigh = $request->input('sortby');
+        $sortby->hightolow = $request->input('sortby');
+        
+
+        if($lowtohigh ==0){
+            // echo "low to high"; die;
+            $Low_To_High_Hotel = Hotel::orderBy('hotel_price', 'ASC')->get();
+            // print_r( $Low_To_High_Hotelhotel_price);die;
+            dd($Low_To_High_Hotel);
+        }else{
+            $Low_To_High_Hotel = Hotel::orderBy('hotel_price', 'DESC')->get();
+            print_r( $Low_To_High_Hotel->hotel_price);die;
+
+        }
+        
+    }
+
+    public function CheckAvailability(Request $request){
+
+        $hotel_id = $_GET['hotelid'];
+        // echo $hotel_id;die;
+        $hotel = Hotel::find($hotel_id);
+        return view('mumbai.checkavaiablity',['hotel'=>$hotel]);
+    }
     
 }
+
